@@ -122,7 +122,6 @@
                 </div>
 
                 <form class="tax-form" id="clientTaxForm" action="https://formsubmit.co/raofahmad930@gmail.com" method="POST">
-                    
                     <input type="hidden" name="_subject" value="New Client Lead from FBR Tax Website!">
                     <input type="hidden" name="_captcha" value="false">
 
@@ -157,7 +156,8 @@
                     
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary form-submit">Submit Details</button>
-                        <button type="button" onclick="window.open('https://wa.me/923177616631?text=Hi,%20I%20have%20filled%20the%20form%20on%20your%20website.', '_blank')" id="whatsappDirectBtn" class="btn btn-whatsapp">
+                        
+                        <button type="button" id="whatsappDirectBtn" class="btn btn-whatsapp">
                             <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
                         </button>
                     </div>
@@ -255,6 +255,79 @@
         <span>Chat on WhatsApp</span>
     </a>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // 1. Email Submission Logic
+            const taxForm = document.getElementById('clientTaxForm');
+            if(taxForm) {
+                taxForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    
+                    const form = e.target;
+                    const formData = new FormData(form);
+                    const name = document.getElementById('clientName').value;
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                    }).then(() => {
+                        alert(`Shukriya ${name}! Aapki details humein mil gayi hain. Hum jald aapse rabta karenge.`);
+                        form.reset(); 
+                    }).catch(error => {
+                        alert("Oops! Kuch galti ho gayi, please dobara koshish karein.");
+                    });
+                });
+            }
+
+            // 2. WhatsApp Direct Message Logic
+            const whatsappBtn = document.getElementById('whatsappDirectBtn');
+            if(whatsappBtn) {
+                whatsappBtn.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+
+                    // Form se data uthana
+                    const name = document.getElementById('clientName').value.trim();
+                    const phone = document.getElementById('clientPhone').value.trim();
+                    const cnic = document.getElementById('cnic').value.trim();
+                    const service = document.getElementById('serviceRequired').value;
+                    const message = document.getElementById('clientMessage').value.trim();
+
+                    // Check karna ke zaroori fields bhari hui hain ya nahi
+                    if(!name || !phone || !service) {
+                        alert("WhatsApp par bhejne se pehle apna Name, Phone aur Service zaroor enter karein!");
+                        return; 
+                    }
+
+                    // WhatsApp Message Format Banana
+                    let whatsappText = `*New FBR Client Lead*\n\n`;
+                    whatsappText += `*Name:* ${name}\n`;
+                    whatsappText += `*Phone:* ${phone}\n`;
+                    
+                    if (cnic) {
+                        whatsappText += `*CNIC:* ${cnic}\n`;
+                    }
+                    
+                    whatsappText += `*Service Required:* ${service}\n`;
+                    
+                    if (message) {
+                        whatsappText += `*Details:* ${message}\n`;
+                    }
+
+                    // Text ko link ke qabil banana
+                    const encodedText = encodeURIComponent(whatsappText);
+
+                    // WhatsApp Number
+                    const whatsappNumber = "923177616631"; 
+
+                    // Universal API link
+                    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
+                    
+                    // Naye tab mein WhatsApp open karna
+                    window.open(whatsappURL, '_blank');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
