@@ -8,7 +8,6 @@
 }
 
 :root {
-    /* Changed from Green to Navy Blue */
     --primary-color: #000d30; 
     --accent-color: #d4af37;
     --dark-blue: #000d30;
@@ -25,7 +24,6 @@ body {
 
 /* --- Upgraded Classy 2026 Announcement Bar --- */
 .announcement-bar {
-    /* Updated gradient to use navy blue */
     background: linear-gradient(135deg, #000d30 0%, #000d30 100%); 
     color: #ffffff;
     display: flex;
@@ -61,7 +59,7 @@ body {
 
 .trust-badge-text {
     background-color: #ffffff;
-    color: #1e3a8a; /* Updated to navy blue */
+    color: #1e3a8a;
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: 800;
@@ -95,11 +93,10 @@ header {
 .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary-color); }
 .nav-btn { text-decoration: none; background: var(--primary-color); color: #fff; padding: 8px 18px; border-radius: 4px; font-weight: 600; transition: 0.3s; }
-.nav-btn:hover { background: #172554; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); } /* Updated hover to darker blue */
+.nav-btn:hover { background: #172554; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); }
 
 /* --- Hero Section & Watermark --- */
 .hero-section {
-    /* Updated gradient to use light blue tints instead of green */
     background: linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(219, 234, 254, 0.9) 100%);
     padding: 110px 20px;
     text-align: center;
@@ -121,7 +118,7 @@ header {
     mix-blend-mode: multiply !important;
 }
 .hero-container { max-width: 850px; margin: 0 auto; position: relative !important; z-index: 2 !important; }
-.badge { background: #dbeafe; color: #1e3a8a; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; } /* Updated badge to blue */
+.badge { background: #dbeafe; color: #1e3a8a; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
 .hero-container h1 { font-size: 48px; color: var(--dark-blue); margin: 25px 0; line-height: 1.25; font-weight: 800; }
 .hero-container p { font-size: 19px; color: #475569; margin-bottom: 35px; }
 .hero-buttons { display: flex; justify-content: center; gap: 15px; }
@@ -129,7 +126,7 @@ header {
 /* --- Buttons --- */
 .btn { padding: 12px 30px; border-radius: 6px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: 0.3s; }
 .btn-primary { background: var(--primary-color); color: #fff; }
-.btn-primary:hover { background: #172554; transform: translateY(-2px); } /* Updated hover to darker blue */
+.btn-primary:hover { background: #172554; transform: translateY(-2px); }
 .btn-secondary { background: var(--dark-blue); color: #fff; }
 .btn-secondary:hover { background: #1e293b; transform: translateY(-2px); }
 
@@ -141,7 +138,6 @@ header {
 .section-header p { color: #64748b; margin-top: 10px; font-size: 17px; }
 
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-/* Modified to act as an anchor link */
 .service-card { border: 1px solid #e2e8f0; padding: 35px 30px; border-radius: 10px; background: #fff; transition: 0.3s; text-decoration: none; display: block; color: inherit; }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-color: var(--primary-color); }
 .service-icon { font-size: 38px; color: var(--primary-color); margin-bottom: 20px; }
@@ -159,7 +155,7 @@ header {
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; color: var(--dark-blue); }
 .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 15px; outline: none; transition: 0.3s; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); } /* Updated shadow to blue */
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
 
 /* Updated Buttons inside Form */
 .form-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
@@ -192,7 +188,7 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 @keyframes barElegantGlow {
-    0% { box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2); } /* Updated shadow to blue */
+    0% { box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2); }
     100% { box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); border-color: #ffdf79; }
 }
 @keyframes textPulse {
@@ -201,20 +197,66 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
     100% { transform: scale(1); }
 }
 
+/* --- Menu Toggle Button (Hidden on Desktop) --- */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: var(--dark-blue);
+    cursor: pointer;
+}
+
+.mobile-only { display: none; }
+
 /* --- Mobile Responsive --- */
 @media (max-width: 900px) {
     .announcement-bar { flex-direction: column; gap: 12px; text-align: center; padding: 15px; }
     .bar-content { flex-direction: column; gap: 6px; }
     .bar-actions { width: 100%; justify-content: center; }
 }
+
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 15px; }
-    .nav-links { gap: 15px; }
+    /* Navbar Mobile Fix */
+    .menu-toggle { display: block; }
+    .desktop-only { display: none; }
+    .mobile-only { display: block; margin-top: 15px; }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #ffffff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-btn-mobile {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+    }
+
     .hero-container h1 { font-size: 32px; }
     .form-container { grid-template-columns: 1fr; gap: 40px; }
     .whatsapp-float span { display: none; } 
     .whatsapp-float { padding: 16px; border-radius: 50%; bottom: 20px; right: 20px; }
 }
+
 @media (max-width: 600px) {
     .trust-badge-text { display: block; margin-left: 0; margin-top: 5px; text-align: center; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .tax-form { padding: 20px; }
 }
