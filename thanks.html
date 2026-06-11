@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | FBR Tax Consultants</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thanks-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light-gray);
+        }
+        .thanks-card {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 600px;
+            width: 100%;
+            border-top: 5px solid #25d366; /* WhatsApp Green */
+        }
+        .success-icon {
+            font-size: 70px;
+            color: #25d366;
+            margin-bottom: 20px;
+        }
+        .thanks-card h1 {
+            color: var(--dark-blue);
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .thanks-card p {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .whatsapp-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25d366;
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .whatsapp-action-btn:hover {
+            background-color: #1ebd58;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        .back-home {
+            display: block;
+            margin-top: 25px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-home:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">FBR Tax<span> Consultants</span></div>
+            <a href="index.html" class="nav-btn">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="thanks-section">
+            <div class="thanks-card">
+                <i class="fa-solid fa-circle-check success-icon"></i>
+                <h1>Shukriya! Form Submit Ho Gaya</h1>
+                <p>Aapki details humein masool ho gayi hain. Hamara tax expert jald hi aap se rabta karega. Fouri jawab aur discussion ke liye aap abhi humein WhatsApp par message kar sakte hain.</p>
+                
+                <a href="https://wa.me/923177616631?text=Hi,%20I%20have%20just%20submitted%20the%20form%20on%20your%20website%20for%20FBR%20Tax%20services.%20Please%20check." class="whatsapp-action-btn" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Quick Reply on WhatsApp
+                </a>
+                
+                <a href="index.html" class="back-home">← Back to Website</a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
