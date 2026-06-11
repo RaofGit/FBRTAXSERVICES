@@ -21,6 +21,37 @@ body {
     background-color: #ffffff;
     line-height: 1.6;
 }
+/* Hero Top Button - New Positioning */
+.hero-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 15px; /* Badge aur Button ke beech gap */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    animation: pulseBtn 2s infinite;
+}
+
+.hero-top-btn:hover {
+    transform: translateY(-3px);
+    background: #fff;
+}
+
+@keyframes pulseBtn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Baki sab styling purani wali hi rahegi */
 
 /* --- Upgraded Classy 2026 Announcement Bar --- */
 .announcement-bar {
@@ -35,8 +66,6 @@ body {
     z-index: 1001;
     font-size: 14px;
     border-bottom: 2px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.25);
-    animation: barElegantGlow 4s infinite alternate;
 }
 
 .bar-content {
@@ -92,8 +121,6 @@ header {
 .nav-links { display: flex; list-style: none; gap: 25px; }
 .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary-color); }
-.nav-btn { text-decoration: none; background: var(--primary-color); color: #fff; padding: 8px 18px; border-radius: 4px; font-weight: 600; transition: 0.3s; }
-.nav-btn:hover { background: #172554; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); }
 
 /* --- Hero Section & Watermark --- */
 .hero-section {
@@ -187,10 +214,6 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
     70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(212, 175, 55, 0); }
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
-@keyframes barElegantGlow {
-    0% { box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2); }
-    100% { box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); border-color: #ffdf79; }
-}
 @keyframes textPulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.03); background-color: #ffdf79; }
@@ -205,8 +228,6 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
     cursor: pointer;
 }
 
-.mobile-only { display: none; }
-
 /* --- Mobile Responsive --- */
 @media (max-width: 900px) {
     .announcement-bar { flex-direction: column; gap: 12px; text-align: center; padding: 15px; }
@@ -217,8 +238,6 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
 @media (max-width: 768px) {
     /* Navbar Mobile Fix */
     .menu-toggle { display: block; }
-    .desktop-only { display: none; }
-    .mobile-only { display: block; margin-top: 15px; }
     
     .nav-links {
         display: none;
@@ -236,16 +255,6 @@ footer { background: var(--dark-blue); color: #94a3b8; text-align: center; paddi
     
     .nav-links.active {
         display: flex;
-    }
-
-    .nav-btn-mobile {
-        background: var(--primary-color);
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-block;
     }
 
     .hero-container h1 { font-size: 32px; }
